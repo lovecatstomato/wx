@@ -1,0 +1,88 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "果园"
+		}
+	}, {
+		"path": "pages/Classification/Classification",
+		"style": {
+			"navigationBarTitleText": "果园分类"
+		}
+	}, {
+		"path": "pages/shopping/shopping",
+		"style": {
+			"navigationBarTitleText": "购物车"
+		}
+	}, {
+		"path": "pages/Myorchard/Myorchard",
+		"style": {
+			"navigationBarTitleText": "我的果园"
+		}
+	}, {
+		"path": "pages/week/week",
+		"style": {
+			"navigationBarTitleText": "新品尝鲜"
+		}
+	}, {
+		"path": "pages/week/fruits",
+		"style": {
+			"navigationBarTitleText": "新鲜水果"
+		}
+	}, {
+		"path": "pages/Detailpage/Detailpage",
+		"style": {
+			"navigationBarTitleText": "商品详细"
+		}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#FFFFFF",
+		"usingComponents": {
+			"van-button": "static/vant/button/index",
+			"van-sidebar": "static/vant/sidebar/index",
+			"van-sidebar-item": "static/vant/sidebar-item/index",
+			"van-grid": "static/vant/grid/index",
+			"van-grid-item": "static/vant/grid-item/index",
+			"van-tab": "static/vant/tab/index",
+			"van-tabs": "static/vant/tabs/index",
+			"van-divider": "static/vant/divider/index",
+			"van-tag": "static/vant/tag/index",
+			"van-goods-action": "static/vant/goods-action/index",
+			"van-goods-action-icon": "static/vant/goods-action-icon/index",
+			"van-goods-action-button": "static/vant/goods-action-button/index",
+			"van-toast": "static/vant/toast/index",
+			"van-submit-bar": "static/vant/submit-bar/index",
+			"van-card": "static/vant/card/index",
+			"van-swipe-cell": "static/vant/swipe-cell/index"
+		}
+	},
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "/static/tabs/home.png",
+				"selectedIconPath": "/static/tabs/home-active.png"
+			}, {
+				"pagePath": "pages/Classification/Classification",
+				"text": "分类",
+				"iconPath": "/static/tabs/category.png",
+				"selectedIconPath": "/static/tabs/category-active.png"
+			}, {
+				"pagePath": "pages/shopping/shopping",
+				"text": "购物车",
+				"iconPath": "/static/tabs/cart.png",
+				"selectedIconPath": "/static/tabs/cart-active.png"
+			}, {
+				"pagePath": "pages/Myorchard/Myorchard",
+				"text": "我的果园",
+				"iconPath": "/static/tabs/me.png",
+				"selectedIconPath": "/static/tabs/me-active.png"
+			}
+
+		]
+	}
+
+}

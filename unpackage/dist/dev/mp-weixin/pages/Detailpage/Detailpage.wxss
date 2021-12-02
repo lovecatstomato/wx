@@ -1,0 +1,245 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 介绍 */
+.introduce {
+	position: relative;
+	left: 20px;
+	width: 260px;
+	bottom: 60px;
+	padding: 10px;
+	box-shadow: 1px 1px 1px 1px #F4F4F4;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+/* 标题框架 */
+.titleText {
+	text-align: center;
+}
+/* 标题 */
+.ti {
+	padding: 8px;
+	font-weight: bold;
+}
+/* 标题介绍 */
+.ti-desc {
+	color: #B7B7B7;
+	padding-bottom: 15px;
+}
+/* 价格框架 */
+.ti-all {
+	color: #FF7B00;
+	font-weight: bolder;
+}
+/* 价格 */
+.ti-price {
+	font-size: 24px;
+}
+.tia {
+	display: grid;
+	grid-template-columns: 80px 80px;
+	margin: auto;
+	width: 190px;
+}
+.ti-volume {
+	white-space: nowrap;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px 1px #F4F4F4;
+	padding: 8px;
+	margin: 5px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+.tia view:nth-child(2) {
+	width: 80px;
+	background-color: #FF8900;
+	color: #ffffff;
+}
+/* 送达时间 */
+.sendTime {
+	font-size: 12px;
+	text-align: center;
+	color: #C9C9C9;
+}
+/* 送达标准 */
+.refund {
+	padding: 16px 0 0 0;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+}
+/* 注意事项表格 */
+.customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+.customers ._td,
+.customers ._th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	width: 100%;
+}
+.customers ._tr {
+	display: flex;
+}
+/* 相似商品主框架 */
+.Similar{
+	position: relative;
+	left: 20px;
+	width: 280px;
+	bottom: 40px;
+	box-shadow: 1px 1px 1px 1px #F4F4F4;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+/* 相似商品文字标题 */
+.similarText{
+	font-weight: bold;
+}
+/* 相似商品框架 */
+.prod {
+	display: flex;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px;
+}
+/* 相似商品按钮 */
+.butTon {
+	width: 20px;
+	height: 20px;
+}
+

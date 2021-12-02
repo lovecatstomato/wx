@@ -1,0 +1,226 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 轮播图图片 */
+.Carousel image {
+	height: 100%;
+	width: 100%;
+}
+/* 轮播标题 */
+.tiel {
+	height: 230rpx;
+}
+/* 图片主体框架 */
+.imgsPic {
+	height: 200px;
+	padding: 10px;
+}
+/* 图片包含小框架 */
+.imgsAll {
+	display: flex;
+	width: 2000px;
+}
+/* 图片小框架 */
+.imgs {
+	padding: 5px;
+	width: 300rpx;
+}
+/* 图片详细标题 */
+.imgtitel {
+	font-weight: bolder;
+	font-size: 15px;
+	display: inline-block;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/* 详细图片大小 */
+.picture {
+	height: 300rpx;
+	width: 300rpx;
+}
+/* 图片详细介绍 */
+.imgIntroduce {
+	font-size: 14px;
+	color: #707070;
+	text-align: center;
+	display: inline-block;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/* 详细价格 */
+.price {
+	color: #EDA862;
+	font-weight: bold;
+	font-size: 16px;
+}
+.getRid {
+	display: flex;
+	align-items: center;
+}
+/* 详细单位 */
+.volume {
+	color: #EDA862;
+	font-weight: bold;
+	font-size: 12px;
+}
+.butTon {
+	width: 30px;
+	height: 30px;
+}
+

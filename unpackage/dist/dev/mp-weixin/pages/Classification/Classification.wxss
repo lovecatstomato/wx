@@ -1,0 +1,109 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 主体框架 */
+.overall {
+	display: flex;
+}
+/* 主体框架 */
+.titleAll{
+	text-align: center;
+	box-shadow: 6px 6px 6px #F4F4F4;
+	width: 235px;
+	padding: 10px 0 10px 0;
+}
+/* 列表标题 */
+.titleText{
+	font-size: 18px;
+	font-weight: bold;
+}
+.imgsTe{
+	padding: 5px;
+}
+/* 图片主体框架 */
+.imgsAll {
+	display: grid;
+	grid-template-columns: 80px 80px 80px;
+	/* text-align: center; */
+}
+/* 图片 */
+.imgs {
+	height: 70px;
+	width: 70px;
+}
+/* 内容介绍 */
+.Text{
+	font-size: 14px;
+}
+

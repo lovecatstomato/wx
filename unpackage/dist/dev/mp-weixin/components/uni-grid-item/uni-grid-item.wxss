@@ -1,0 +1,40 @@
+
+.uni-grid-item.data-v-c05ffd80 {
+
+		height: 100%;
+		display: flex;
+}
+.uni-grid-item__box.data-v-c05ffd80 {
+
+		display: flex;
+		width: 100%;
+
+		position: relative;
+		flex: 1;
+		flex-direction: column;
+		/* justify-content: center;
+ */
+		/* align-items: center;
+ */
+}
+.uni-grid-item--border.data-v-c05ffd80 {
+		position: relative;
+		border-bottom-color: #e5e5e5;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-right-color: #e5e5e5;
+		border-right-style: solid;
+		border-right-width: 1px;
+}
+.uni-grid-item--border-top.data-v-c05ffd80 {
+		border-top-color: #e5e5e5;
+		border-top-style: solid;
+		border-top-width: 1px;
+
+		height: 100%;
+		box-sizing: border-box;
+}
+.uni-highlight.data-v-c05ffd80:active {
+		background-color: #f1f1f1;
+}
+
