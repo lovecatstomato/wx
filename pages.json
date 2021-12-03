@@ -56,7 +56,11 @@
 			"van-toast": "static/vant/toast/index",
 			"van-submit-bar": "static/vant/submit-bar/index",
 			"van-card": "static/vant/card/index",
-			"van-swipe-cell": "static/vant/swipe-cell/index"
+			"van-swipe-cell": "static/vant/swipe-cell/index",
+			"van-image": "static/vant/image/index",
+			"van-checkbox": "static/vant/checkbox/index",
+			"van-checkbox-group": "static/vant/checkbox-group/index",
+			"van-dialog": "static/vant/dialog/index"
 		}
 	},
 	"tabBar": {

@@ -18,7 +18,7 @@
 								<span style="color: #FF7E00">￥</span>
 								<span id="price">{{items.price}}</span>
 								<van-tag class="Loan" color="#FF7E00" text-color="#ffe1e1">明日达</van-tag>
-								<image class="butTon" :src="`${ip}/images/cart.png`"></image>
+								<image @click="joinIn(items)" class="butTon" :src="`${ip}/images/cart.png`"></image>
 							</p>
 						</view>
 					</view>
@@ -48,6 +48,44 @@
 					console.log(this.New)
 				}
 			});
+		},
+		methods:{
+			// 加入购物车
+			joinIn(join) {
+				console.log(join)
+				const user = wx.getStorageSync('username')
+				if (user) {
+					const proObj = {
+						title: join.product_name,
+						product_id: join.id,
+						price: join.price,
+						volume: join.volume,
+						image: join.photo,
+						number: 1,
+						checked: false
+					}
+					if (!wx.getStorageSync('proArr')) {
+						const proArr = []
+						proArr.push(proObj)
+						wx.setStorageSync('proArr', proArr)
+					} else {
+						const proArr = wx.getStorageSync('proArr')
+						const index = proArr.findIndex(item => item.product_id === join.product_id)
+						if (index === -1) {
+							proArr.push(proObj)
+						} else {
+							proArr[index].number++
+						}
+						wx.setStorageSync('proArr', proArr)
+			
+					}
+					this.proArr = wx.getStorageSync('proArr')
+				} else {
+					Dialog.alert({
+						message: '请先登录',
+					})
+				}
+			}
 		}
 	}
 </script>

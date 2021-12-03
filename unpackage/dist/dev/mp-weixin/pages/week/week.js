@@ -180,7 +180,44 @@ var _default =
         console.log(_this.New);
       } });
 
-  } };exports.default = _default;
+  },
+  methods: {
+    // 加入购物车
+    joinIn: function joinIn(join) {
+      console.log(join);
+      var user = wx.getStorageSync('username');
+      if (user) {
+        var proObj = {
+          title: join.product_name,
+          product_id: join.id,
+          price: join.price,
+          volume: join.volume,
+          image: join.photo,
+          number: 1,
+          checked: false };
+
+        if (!wx.getStorageSync('proArr')) {
+          var proArr = [];
+          proArr.push(proObj);
+          wx.setStorageSync('proArr', proArr);
+        } else {
+          var _proArr = wx.getStorageSync('proArr');
+          var index = _proArr.findIndex(function (item) {return item.product_id === join.product_id;});
+          if (index === -1) {
+            _proArr.push(proObj);
+          } else {
+            _proArr[index].number++;
+          }
+          wx.setStorageSync('proArr', _proArr);
+
+        }
+        this.proArr = wx.getStorageSync('proArr');
+      } else {
+        Dialog.alert({
+          message: '请先登录' });
+
+      }
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

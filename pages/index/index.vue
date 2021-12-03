@@ -1,6 +1,7 @@
 <template>
 	<view>
 		<!-- 轮播图 -->
+		<van-dialog id="van-dialog" />
 		<view class="Carousel">
 			<swiper indicator-dots="true" autoplay="true">
 				<block v-for="item in overall" :key="index">
@@ -33,7 +34,7 @@
 				<movable-area class="imgsPic">
 					<movable-view class="imgsAll" direction="horizontal">
 						<view class="imgs" v-for="ie in item.content" :key="ie.product_id">
-							<image @click="productId(ie.product_id)" class="picture" :src="`${IpId}${ie.image}`" mode="" />
+							<image @click="productId(ie.product_id,ie.image)" class="picture" :src="`${IpId}${ie.image}`" mode="" />
 							<text class="imgtitel">{{ie.subtitle}}</text>
 							<text class="imgIntroduce">{{ie.title}}</text>
 							<view class="getRid">
@@ -54,6 +55,7 @@
 
 <script>
 	import Toast from '../../static/vant/toast/toast';
+	import Dialog from '../../static/vant/dialog/dialog';
 	export default {
 		data() {
 			return {
@@ -90,62 +92,47 @@
 				});
 			},
 			// 详细页面请求
-			productId(id) {
+			productId(id,images) {
+				// console.log(id)
+				// console.log(images)
 				uni.navigateTo({
-					url: `../Detailpage/Detailpage?id=${id}`
+					url: `../Detailpage/Detailpage?id=${id}&image=${images}`
 				});
 			},
 			// 加入购物车
 			joinIn(join) {
-
-				
-				const proObj = {
-					product_id: join.product_id,
-					price: join.price,
-					volume: join.volume,
-					image: join.image,
-					number: 1,
-					checked: false
-				}
-				if (!wx.getStorageSync('proArr')) {
-					const proArr = []
-					proArr.push(proObj)
-					wx.setStorageSync('proArr', proArr)
-				} else {
-					const proArr = wx.getStorageSync('proArr')
-					const index = proArr.findIndex(item => item.product_id === join.product_id)
-					if (index === -1) {
-						proArr.push(proObj)
-					} else {
-						proArr[index].number++
+				const user = wx.getStorageSync('username')
+				if (user) {
+					const proObj = {
+						title: join.title,
+						product_id: join.product_id,
+						price: join.price,
+						volume: join.volume,
+						image: join.image,
+						number: 1,
+						checked: false
 					}
-					wx.setStorageSync('proArr', proArr)
+					if (!wx.getStorageSync('proArr')) {
+						const proArr = []
+						proArr.push(proObj)
+						wx.setStorageSync('proArr', proArr)
+					} else {
+						const proArr = wx.getStorageSync('proArr')
+						const index = proArr.findIndex(item => item.product_id === join.product_id)
+						if (index === -1) {
+							proArr.push(proObj)
+						} else {
+							proArr[index].number++
+						}
+						wx.setStorageSync('proArr', proArr)
 
+					}
+					this.proArr = wx.getStorageSync('proArr')
+				} else {
+					Dialog.alert({
+						message: '请先登录',
+					})
 				}
-				this.proArr = wx.getStorageSync('proArr')
-				// const a = {
-				// 	product_name,
-				// }
-
-				// // 取出
-				// let joinInd = wx.getStorageSync('joinInd') || [];
-				// // console.log(joinInd.product_id)
-				// // console.log(join.product_id)
-
-				// if (joinInd.product_id === join.product_id) {
-				// 	joinInd.push(a)
-				// 	console.log(1)
-				// } else {
-
-				// 	console.log(2)
-				// }
-				// console.log(joinInd)
-				// // 存入
-				// wx.setStorageSync("joinInd", joinInd)
-				// let index = joinInd.findIndex(product_id === join.product_id)
-				// console.log(index)
-				// joinInd.push(join)
-
 			}
 
 		}

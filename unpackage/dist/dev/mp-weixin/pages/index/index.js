@@ -185,7 +185,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _toast = _interopRequireDefault(__webpack_require__(/*! ../../static/vant/toast/toast */ 49));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+
+var _toast = _interopRequireDefault(__webpack_require__(/*! ../../static/vant/toast/toast */ 49));
+var _dialog = _interopRequireDefault(__webpack_require__(/*! ../../static/vant/dialog/dialog */ 109));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
 //
 //
 //
@@ -246,38 +249,22 @@ var _default = { data: function data() {return { // id请求头
     uni.request({ url: "".concat(this.IpId, "data/fruits.json"), success: function success(res) {_this.overall = res.data.banners;_this.commodity = res.data.bannerTags;console.log(_this.commodity);} });}, methods: { // 每周上新
     NewEvery: function NewEvery() {uni.navigateTo({ url: '../week/week' });}, // 新鲜水果
     Newfruits: function Newfruits() {uni.navigateTo({ url: '../week/fruits' });}, // 详细页面请求
-    productId: function productId(id) {uni.navigateTo({ url: "../Detailpage/Detailpage?id=".concat(id) });}, // 加入购物车
-    joinIn: function joinIn(join) {var proObj = { product_id: join.product_id, price: join.price, volume: join.volume, image: join.image, number: 1, checked: false };if (!wx.getStorageSync('proArr')) {var proArr = [];proArr.push(proObj);wx.setStorageSync('proArr', proArr);} else {var _proArr = wx.getStorageSync('proArr');var index = _proArr.findIndex(function (item) {return item.product_id === join.product_id;});if (index === -1) {_proArr.push(proObj);
-        } else {
-          _proArr[index].number++;
+    productId: function productId(id, images) {// console.log(id)
+      // console.log(images)
+      uni.navigateTo({ url: "../Detailpage/Detailpage?id=".concat(id, "&image=").concat(images) });}, // 加入购物车
+    joinIn: function joinIn(join) {var user = wx.getStorageSync('username');if (user) {var proObj = { title: join.title, product_id: join.product_id, price: join.price, volume: join.volume, image: join.image, number: 1, checked: false };if (!wx.getStorageSync('proArr')) {var proArr = [];proArr.push(proObj);wx.setStorageSync('proArr', proArr);} else {var _proArr = wx.getStorageSync('proArr');var index = _proArr.findIndex(function (item) {return item.product_id === join.product_id;});if (index === -1) {_proArr.push(proObj);
+          } else {
+            _proArr[index].number++;
+          }
+          wx.setStorageSync('proArr', _proArr);
+
         }
-        wx.setStorageSync('proArr', _proArr);
+        this.proArr = wx.getStorageSync('proArr');
+      } else {
+        _dialog.default.alert({
+          message: '请先登录' });
 
       }
-      this.proArr = wx.getStorageSync('proArr');
-      // const a = {
-      // 	product_name,
-      // }
-
-      // // 取出
-      // let joinInd = wx.getStorageSync('joinInd') || [];
-      // // console.log(joinInd.product_id)
-      // // console.log(join.product_id)
-
-      // if (joinInd.product_id === join.product_id) {
-      // 	joinInd.push(a)
-      // 	console.log(1)
-      // } else {
-
-      // 	console.log(2)
-      // }
-      // console.log(joinInd)
-      // // 存入
-      // wx.setStorageSync("joinInd", joinInd)
-      // let index = joinInd.findIndex(product_id === join.product_id)
-      // console.log(index)
-      // joinInd.push(join)
-
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

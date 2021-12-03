@@ -73,7 +73,7 @@
 		</view>
 		<van-goods-action>
 			<van-goods-action-icon icon="chat-o" text="客服" />
-			<van-goods-action-icon icon="cart-o" text="购物车" />
+			<van-goods-action-icon icon="cart-o" :info="num" text="购物车" />
 			<van-goods-action-button @click="onClickButton()" color="#FF8A00" text="加入购物车" type="warning" />
 			<van-goods-action-button @click="Buy()" color="#FFC70A" text="立即购买" />
 		</van-goods-action>
@@ -98,16 +98,22 @@
 				// 详细标题数组
 				produInfo: [],
 				// 注意事项数组
-				tempInfo: []
+				tempInfo: [],
+				// 购物车
+				num:1,
+				// 图片
+				images:[]
 			}
 		},
 		onLoad(option) {
-			console.log(option.id)
+			console.log(option)
 			// 请求数据
+			this.images = option.image
+			console.log(this.images)
 			uni.request({
 				url: `${this.ip}/data/good_detail_${option.id}.json`,
 				success: res => {
-					console.log(res.data)
+					// console.log(res.data)
 					// 主要数组
 					this.commodityData = res.data
 					// 标题数组
@@ -116,6 +122,8 @@
 					this.title = this.commodityData.productInfo.product_name.substring(0, 6)
 					// 注意事项
 					this.tempInfo = this.commodityData.templateInfo.pro_info
+					let Traverse = wx.getStorageSync('proArr')
+					this.num = Traverse.length
 				},
 			});
 		},
@@ -127,6 +135,7 @@
 			// 立即购买
 			Buy() {
 				Toast('购买成功')
+				
 			}
 		}
 	}
